@@ -40,7 +40,7 @@ namespace TARge20.Core.Domain
         /// <summary>
         /// Kui kasutate enumit, siis peate olema kindel, et on tegemist valikutega, mis jäävad kogu rakenduse eluajaks samaks.
         /// </summary>
-        //public Gender Gender { get; set; }
+        public Gender Gender { get; set; }
 
         /// <summary>
         /// 
@@ -52,24 +52,27 @@ namespace TARge20.Core.Domain
         /// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers#:~:text=Object%20initializers%20let%20you%20assign,by%20lines%20of%20assignment%20statements.
         /// </summary>
         /// Kas peaks objekti initsialiseerima või mitte
-        //public IEnumerable<Children> Childrens { get; set; } = new List<Children>();
-        //public ICollection<Children> Childrens { get; set; }
-        //public List<Children> Childrens { get; set; }
+        public IEnumerable<Children> Childrens { get; set; } = new List<Children>();
+        public ICollection<Children> Childrens { get; set; }
+        public List<Children> Childrens { get; set; }
     }
 
 
-    //public enum Gender
-    //{
-    //    Female, 
-    //    Male,
-    //    Unknown
-    //}
+    public enum Gender
+    {
+        Female,
+        Male,
+        Unknown
+    }
 
-    //public class Children
-    //{
-    //    [Key]
-    //    public Guid Id { get; set; }
+    public class Children
+    {
+        [Key]
+        public Guid Id { get; set; }
 
-    //    public string FirstName { get; set; }
-    //}
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        //GetDate getDate = new DateTime(2011, 6, 10);
+        public string Comment { get; set; }
+    }
 }
