@@ -4,12 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TARge20.Core.Domain
 {
-    public class Employee
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+    
 
         /// ESIMENE HINDELINE HARJUTUS
         /// Nõuded ja tegevus:
@@ -55,9 +50,22 @@ namespace TARge20.Core.Domain
         public IEnumerable<Children> Childrens { get; set; } = new List<Children>();
         public ICollection<Children> Childrens { get; set; }
         public List<Children> Childrens { get; set; }
+    
+    public class Employee
+    {
+        [Key]
+        public Guid Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        //GetDate Birth = new DateTime(2011, 6, 10);
+        public string Id { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        //GetDate Workingsense = new DateTime(2011, 6, 10);
+        //GetDate Workingtill = new DateTime(2011, 6, 10);    
     }
 
-
+    //miks mul seda vaja läheb???
     public enum Gender
     {
         Female,
@@ -72,7 +80,112 @@ namespace TARge20.Core.Domain
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        //GetDate getDate = new DateTime(2011, 6, 10);
-        public string Comment { get; set; }
+        //GetDate Birth = new DateTime(2011, 6, 10);
+        public string Comment { get; set; } //võib olla NULL
+    }
+
+    public class Access
+    {
+        [Key]
+        public Guid Id { get; set; }
+    }
+
+    public class Palve
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Tekst { get; set; }
+        //GetDate Kuupäev = new DateTime(2011, 6, 10);
+    }
+
+    public class AccessLevel
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string FirstName { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class Thing
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Name { get; set; } //võib olla NULL
+        public string Description { get; set; } //võib olla NULL
+        public string Comment { get; set; } //võib olla NULL
+        public string Available { get; set; } 
+    }
+
+    public class Hint
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Tekst { get; set; }
+        //GetDate Kuupäev = new DateTime(2011, 6, 10);
+    }
+
+    public class Harukontor
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Number { get; set; }
+        public string FirstName { get; set; }
+        public string Country { get; set; }
+        public string Address { get; set; }
+    }
+
+    public class Firm
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Number { get; set; }
+        public string Country { get; set; }
+        public string Address { get; set; }
+    }
+
+    public class Occupation
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string Name { get; set; } //võib olla NULL
+    }
+
+    public class Vacation
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string FirstName { get; set; }
+        public string Description { get; set; } //võib olla NULL
+        //GetDate Start = new DateTime(2011, 6, 10);
+        //GetDate Finish = new DateTime(2011, 6, 10);
+        public int Stock { get; set; } //võib olla NULL
+    }
+
+    public class SickTime
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        //GetDate Start = new DateTime(2011, 6, 10);
+        //GetDate Finish = new DateTime(2011, 6, 10);
+    }
+
+    public class HealthInspection
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        public string FirstName { get; set; }
+        //GetYear year = new DateTime(2011);
+        public string PassOrNo { get; set; }
+        public int Hospital { get; set; } //võib olla NULL
     }
 }
