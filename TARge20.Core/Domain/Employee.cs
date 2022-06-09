@@ -76,7 +76,7 @@ namespace TARge20.Core.Domain
     public class Children
     {
         [Key]
-        public Guid Id { get; set; }
+        primary firma_id { get; set; }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
